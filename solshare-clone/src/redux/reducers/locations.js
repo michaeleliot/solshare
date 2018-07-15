@@ -7,7 +7,7 @@ export default (state=initialState, action) => {
         case 'LOAD_LOCATIONS' :
         return {
             ...state,
-            location: action.locations
+            locations: action.locations
         }
         case 'VIEW_LOCATION':
         return {
