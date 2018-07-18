@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom'
 import Feed from './components/Feed'
 import Header from './components/Header'
-import Login from './components/Login'
+import Login from './components/UserSessions/Login'
 class App extends Component {
     render() {
         return (

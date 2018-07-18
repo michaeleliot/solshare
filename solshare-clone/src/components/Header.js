@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom'
+
 const styles = {
   root: {
     flexGrow: 1,
@@ -31,10 +32,10 @@ class Header extends Component {
             <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
               <MenuIcon />
             </IconButton>
-            <Typography variant="title" color="inherit" className={classes.flex}>
-              <Button color="inherit"> <Link to='/'> Solshare </Link> </Button>
+            <Typography variant="title" color="inherit" className={classes.flex} component={Link} to="/">
+              SolShare
             </Typography>
-            <Button color="inherit"> <Link to='/login'> Login </Link> </Button>
+            <Button color="inherit" component={Link} to="/Log In"> Log In </Button>
           </Toolbar>
         </AppBar>
       </div>

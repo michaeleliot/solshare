@@ -1,6 +1,6 @@
 // src/components/Feed.js
 import React, { Component } from 'react';
-class Login extends Component {
+class FacebookButton extends Component {
 
     facebookStatusChangeCallback(response) {
       if (response.status === 'connected') {
@@ -16,9 +16,6 @@ class Login extends Component {
     googleStatusChangeCallback(googleUser) {
       var profile = googleUser.getBasicProfile();
       document.getElementById('status').innerHTML = 'Thanks for logging in using Google, ' + profile.getName() + '!';
-    }
-    onSignIn(googleUser) {
-      console.log('Logged in as: ' + googleUser.getBasicProfile().getName())
     }
     componentDidMount() {
       window.fbAsyncInit = function() {
@@ -42,23 +39,16 @@ class Login extends Component {
          js.src = "https://connect.facebook.net/en_US/sdk.js";
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
+
+
     }
 
     render() {
       return (
-        <head>
-          <script src="https://apis.google.com/js/api:client.js"></script>
-        </head>
-        <body>
-          <div className="socialwrapper" style={{textAlign: "center", paddingTop: 200}}>
-            <div className="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
-            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-            <div id="status">"Here is the status lul"</div>
-          </div>
-        </body>
+          <div className="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
       );
     }
 }
 
 
-export default Login;
+export default FacebookButton;
