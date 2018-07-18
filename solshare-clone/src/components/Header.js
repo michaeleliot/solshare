@@ -35,7 +35,7 @@ class Header extends Component {
             <Typography variant="title" color="inherit" className={classes.flex} component={Link} to="/">
               SolShare
             </Typography>
-            <Button color="inherit" component={Link} to="/Log In"> Log In </Button>
+            <Button color="inherit" component={Link} to="/login"> Log In </Button>
           </Toolbar>
         </AppBar>
       </div>
