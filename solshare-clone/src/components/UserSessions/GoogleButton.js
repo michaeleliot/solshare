@@ -10,6 +10,9 @@ class GoogleButton extends Component {
           var t = document.getElementsByTagName("script")[0];
           t.parentNode.insertBefore(e, t)
       })();
+      this.setState({onSignIn: this.onSignIn})
+      window.onSignIn = this.onSignIn //this basically injects the function from react to a function of the window
+  
     }
     onSignIn(googleUser) {
       console.log("Signing In!")
