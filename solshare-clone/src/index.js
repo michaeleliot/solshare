@@ -1,3 +1,10 @@
+/**
+NOTE ON STARTING THE APP
+npm run dev to start the server
+mongod to start the sql database
+*/
+
+
 import React from 'react'
 import {render} from 'react-dom'
 import {Provider} from 'react-redux'
