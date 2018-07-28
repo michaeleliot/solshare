@@ -63,8 +63,12 @@ class Feed extends Component {
       </Card>
     )
     return (
-        <div style={{overflow: 'scroll', height: 700 }}>
-          {locationItems}
+        <div className='feed'>
+          <div className='locationView' style={{overflow: 'scroll', height: 700 }}>
+            {locationItems}
+          </div>
+          <div className='statView'>
+          </div>
         </div>
     );
     }
