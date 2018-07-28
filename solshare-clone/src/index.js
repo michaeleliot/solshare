@@ -2,6 +2,7 @@
 NOTE ON STARTING THE APP
 npm run dev to start the server
 mongod to start the sql database
+- if no data shows up, switch the flag in server/app.js
 */
 
 
