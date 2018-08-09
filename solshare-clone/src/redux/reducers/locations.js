@@ -22,6 +22,14 @@ export default (state=initialState, action) => {
             ...state,
             location: location
         }
+        case 'INVEST_LOCATION':
+        let location = Object.assign({}, state.location)
+        location.total_funded += PLACEHOLDER; //TODO replace this with the inputed value
+        console.log(location)
+        return {
+            ...state,
+            location: location
+        }
         default:
             return state
     }

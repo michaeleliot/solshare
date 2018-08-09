@@ -36,8 +36,11 @@ export function getLocation (location_id) {
     }
 }
 // locations_id, owner_id, comment
-export function invest () {
+export function invest (location_id, investor_id, amount) {
     return (dispatch) => {
+      axios.post(`${url}location/invest`,{ location_id, investor_id, amount }).then((res) => {
+          dispatch({type:'INVEST_LOCATION'})
+      }).catch((err)=>console.log(err))
     }
 }
 export function like (location_id) {

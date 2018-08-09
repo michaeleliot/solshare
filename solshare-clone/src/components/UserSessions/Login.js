@@ -10,7 +10,7 @@ const styles = {
   },
   social: {
     "display":"inline-block",
-    "width": 150,
+    "width": 225,
     "height": 50,
   }
 }
