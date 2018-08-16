@@ -46,6 +46,7 @@ class Feed extends Component {
     render() {
     const { classes } = this.props
     const locations = this.props.locations
+    //TODO There should be a better way to move between the feed and individual location
     const locationItems = locations.map((location)=>
       <div className={classes.cardWrapper} key={location._id}>
         <Card>

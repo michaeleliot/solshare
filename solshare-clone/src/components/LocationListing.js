@@ -12,10 +12,9 @@ import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
-
-
 import {
-    getLocation
+    getLocation,
+    invest
 } from './../redux/actions/actions'
 const styles = {
   margin: {
@@ -48,7 +47,19 @@ class LocationListing extends Component {
 
     state = {
       amount: '',
+      isErrorState: false,
     };
+
+    investHelper(amount) {
+      if (amount > 0) {
+        this.setState({'isErrorState': false})
+        const fakeUser = 5
+        const currentLocationID = this.props.match.params.id
+        this.props.invest(currentLocationID, fakeUser, amount)
+      } else {
+        this.setState({'isErrorState': true})
+      }
+    }
 
     handleChange = prop => event => {
        this.setState({ [prop]: event.target.value });
@@ -86,7 +97,7 @@ class LocationListing extends Component {
                       <Typography component="p">
                         Total Project Investment: {location.total_funded}
                       </Typography>
-                      <FormControl fullWidth className={classes.margin}>
+                      <FormControl fullWidth error={this.state.isErrorState} className={classes.margin}>
                         <InputLabel htmlFor="adornment-amount">Amount to Add</InputLabel>
                         <Input
                           id="adornment-amount"
@@ -95,7 +106,7 @@ class LocationListing extends Component {
                           startAdornment={<InputAdornment position="start">$</InputAdornment>}
                         />
                      </FormControl>
-                     <Button variant="contained" color="primary" className={classes.button}>
+                     <Button variant="contained" color="primary" onClick={() => this.investHelper(this.state.amount)}className={classes.button}>
                         Invest
                      </Button>
                     </CardContent>
@@ -108,4 +119,4 @@ class LocationListing extends Component {
 }
 
 
-export default compose(withStyles(styles), connect(mapStateToProps, { getLocation }))(LocationListing);
+export default compose(withStyles(styles), connect(mapStateToProps, { getLocation, invest }))(LocationListing);
