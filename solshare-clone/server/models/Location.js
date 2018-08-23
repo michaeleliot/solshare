@@ -15,10 +15,10 @@ let LocationSchema = new mongoose.Schema(
         investors: [
             {
                 investor: {
-                    type: mongoose.Schema.Types.ObjectId,
-                    ref: 'User'
+                  type: mongoose.Schema.Types.ObjectId,
+                  ref: 'User'
                 },
-                amount: Number
+                amount: String
             }
         ]
     }

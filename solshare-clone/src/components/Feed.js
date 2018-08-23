@@ -44,47 +44,47 @@ class Feed extends Component {
     }
 
     render() {
-    const { classes } = this.props
-    const locations = this.props.locations
-    //TODO There should be a better way to move between the feed and individual location
-    const locationItems = locations.map((location)=>
-      <div className={classes.cardWrapper} key={location._id}>
-        <Card>
-          <ButtonBase className={classes.cardButton} component={Link} to={`/location/${location._id}`}>
-            <CardMedia
-              className={classes.cardImg}
-              image={location.feature_img}
-              title={location.name}
-            />
-            <CardContent>
-              <Typography gutterBottom variant="headline" component="h2">
-                {location.name}
-              </Typography>
-              <Typography component="p">
-                {location.description}
-              </Typography>
-              <Typography component="p">
-                {location.address}
-              </Typography>
-            </CardContent>
-          </ButtonBase>
-        </Card>
-      </div>
-    )
-    return (
-        <div className='feed'>
-          <div className='locationView' className = {classes.locationView}>
-              <div style={{float:"left"}}>
-                {locationItems}
-              </div>
-              <div style={{float:"left"}}>
-                {locationItems}
-              </div>
-          </div>
-          <div className='statView'>
-          </div>
+      const { classes } = this.props
+      const locations = this.props.locations
+      //TODO There should be a better way to move between the feed and individual location
+      const locationItems = locations.map((location)=>
+        <div className={classes.cardWrapper} key={location._id}>
+          <Card>
+            <ButtonBase className={classes.cardButton} component={Link} to={`/location/${location._id}`}>
+              <CardMedia
+                className={classes.cardImg}
+                image={location.feature_img}
+                title={location.name}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="headline" component="h2">
+                  {location.name}
+                </Typography>
+                <Typography component="p">
+                  {location.description}
+                </Typography>
+                <Typography component="p">
+                  {location.address}
+                </Typography>
+              </CardContent>
+            </ButtonBase>
+          </Card>
         </div>
-    );
+      )
+      return (
+          <div className='feed'>
+            <div className='locationView' className = {classes.locationView}>
+                <div style={{float:"left"}}>
+                  {locationItems}
+                </div>
+                <div style={{float:"left"}}>
+                  {locationItems}
+                </div>
+            </div>
+            <div className='statView'>
+            </div>
+          </div>
+      );
     }
 }
 

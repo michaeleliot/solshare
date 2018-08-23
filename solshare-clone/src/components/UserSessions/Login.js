@@ -10,8 +10,6 @@ const styles = {
   },
   social: {
     "display":"inline-block",
-    "width": 225,
-    "height": 50,
   }
 }
 
@@ -20,10 +18,10 @@ class Login extends Component {
     const { classes } = this.props
     return (
       <div className={classes.socialWrapper} style={{textAlign: "center", paddingTop: 200}}>
-        <div className={classes.social}>
+        <div>
           <GoogleButton />
         </div>
-        <div className={classes.social}>
+        <div>
           <FacebookButton />
         </div>
         <div id="status">"Here is the status"</div>

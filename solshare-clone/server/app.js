@@ -23,7 +23,7 @@ cloudinary.config({
 })
 
 /** connect to MongoDB datastore */
-var resetData = false
+var resetData = true
 if (resetData === true) {
   Location.collection.drop()
   User.collection.drop()
@@ -37,6 +37,7 @@ if (resetData === true) {
   badPlace.save()
   const okPlace = new Location({ name: "Ok Place", owner: nefariousUser,description: "Middle of the road tbh.",  address: "583 Meh Avenue", feature_img: "https://cdn.onlyinyourstate.com/wp-content/uploads/2015/12/ok284-5-700x525.jpg" , square_footage: 50})
   okPlace.save().then(() => console.log("Done with data"))
+  console.log(goodUser)
 }
 try {
     mongoose.connect(url, {

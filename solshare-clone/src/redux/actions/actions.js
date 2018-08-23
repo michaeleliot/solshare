@@ -39,7 +39,7 @@ export function getLocation (location_id) {
 export function invest (location_id, investor_id, amount) {
     return (dispatch) => {
       axios.post(`${url}location/invest`,{ location_id, investor_id, amount }).then((res) => {
-          dispatch({type:'INVEST_LOCATION'})
+          dispatch({type:'INVEST_LOCATION', amount})
       }).catch((err)=>console.log(err))
     }
 }

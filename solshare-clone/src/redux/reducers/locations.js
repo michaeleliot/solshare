@@ -14,19 +14,22 @@ export default (state=initialState, action) => {
               ...state,
               location: action.location
           }
-        case 'LIKE_LOCATION':
+        case 'LIKE_LOCATION': {
           let location = Object.assign({}, state.location)
           location.likes++
           return {
               ...state,
               location: location
           }
-        case 'INVEST_LOCATION':
-          location.total_funded += action.amount; //TODO replace this with the inputed value
+        }
+        case 'INVEST_LOCATION': {
+          let location = Object.assign({}, state.location)
+          location.total_funded += action.amount
           return {
               ...state,
               location: location
           }
+        }
         default:
             return state
     }

@@ -16,13 +16,13 @@ import {
     getLocation,
     invest
 } from './../redux/actions/actions'
+
 const styles = {
   margin: {
     marginTop: 5
   },
   card: {
     maxWidth: 345,
-    height: 516
   },
   cardImg: {
     height: "10%",
@@ -53,7 +53,7 @@ class LocationListing extends Component {
     investHelper(amount) {
       if (amount > 0) {
         this.setState({'isErrorState': false})
-        const fakeUser = 5
+        const fakeUser = "5b7c93dcee274d09b284e7e7"//TODO replace this with actual user ID
         const currentLocationID = this.props.match.params.id
         this.props.invest(currentLocationID, fakeUser, amount)
       } else {
@@ -91,8 +91,11 @@ class LocationListing extends Component {
                   <Typography component="p">
                     {location.address}
                   </Typography>
+                  <Typography component="p">
+                    Total Space: {location.square_footage} Square Feet
+                  </Typography>
                 </CardContent>
-                <Card className={classes.card}>
+                <Card>
                     <CardContent>
                       <Typography component="p">
                         Total Project Investment: {location.total_funded}
@@ -112,7 +115,6 @@ class LocationListing extends Component {
                     </CardContent>
                 </Card>
             </Card>
-
         </div>
       );
     }
