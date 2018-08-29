@@ -59,13 +59,3 @@ export function SignInUser (user_data) {
         }).catch((err)=>console.log(err))
     }
 }
-export function toggleClose() {
-    return (dispatch) => {
-        dispatch({type: 'TOGGLE_MODAL', modalMode: false})
-    }
-}
-export function toggleOpen() {
-    return (dispatch) => {
-        dispatch({type: 'TOGGLE_MODAL', modalMode: true})
-    }
-}

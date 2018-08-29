@@ -24,7 +24,6 @@ class Login extends Component {
         <div>
           <FacebookButton />
         </div>
-        <div id="status">"Here is the status"</div>
       </div>
     );
   }

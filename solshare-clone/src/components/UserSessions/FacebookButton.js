@@ -1,15 +1,30 @@
 // src/components/Feed.js
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {
+    SignInUser
+ } from '../../redux/actions/actions'
+
+const mapStateToProps = state => {
+    return {
+    }
+}
 class FacebookButton extends Component {
 
     facebookStatusChangeCallback(response) {
+      console.log(response)
       if (response.status === 'connected') {
-        window.FB.api('/me', function(response) {
-          document.getElementById('status').innerHTML = 'Thanks for logging in using Facebook, ' + response.name + '!';
+        window.FB.api('/me', function(res) {
+          console.log(res)
+          let postData = {
+              name: "",
+              email: "",
+              token: "",
+          }
+          this.props.SignInUser(postData)
         });
         return true;
       } else {
-        document.getElementById('status').innerHTML = 'Please log into this app.';
         return false;
       }
     }
@@ -47,4 +62,4 @@ class FacebookButton extends Component {
 }
 
 
-export default FacebookButton;
+export default connect(mapStateToProps, { SignInUser })(FacebookButton);

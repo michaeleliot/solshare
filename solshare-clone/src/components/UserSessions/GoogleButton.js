@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import compose from 'recompose/compose';
 import { withStyles } from '@material-ui/core/styles';
-import { connect } from 'react-redux';import {
+import { connect } from 'react-redux';
+import {
     SignInUser
  } from '../../redux/actions/actions'
 
@@ -72,7 +73,6 @@ class GoogleButton extends Component{
 
             } else if (e.id) {
                 //Profile data
-                console.log(e.emails[0].value)
                 let postData = {
                     name: e.displayName,
                     email: e.emails[0].value,
